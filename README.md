@@ -3,9 +3,8 @@
 # I)	THE METHOD
 This repository contains functions used to approximate the minimum feedback vertex set (FVS) of a directed graph, a problem whose exact solution is known to be NP-hard. This algorithms was used to estimate the size of the minimum FVS in a recent paper "Zañudo, J. G. T., Yang, G., & Albert, R. (2017). PNAS 114: 28, 7234–7239, doi: 10.1073/pnas.1617387114".
 
-This algorithm identifies a near-minimum feedback vertex set using simulated annealing (SA) and a local search of topological ordering. The algorithm is describe in the paper "Galinier, P., Lemamou, E. & Bouzidi, M.W. J Heuristics (2013) 19: 797. doi:10.1007/s10732-013-9224-z". The code follows the pseudocode given in Page 805 in that paper.
+This algorithm identifies a near-minimum feedback vertex set using simulated annealing (SA) and a local search of topological ordering. The algorithm is described in the paper "Galinier, P., Lemamou, E. & Bouzidi, M.W. J Heuristics (2013) 19: 797. doi:10.1007/s10732-013-9224-z". The code follows the pseudocode given in Page 805 in that paper.
 
-The algorithm is describe in the paper "Galinier, P., Lemamou, E. & Bouzidi, M.W. J Heuristics (2013) 19: 797. doi:10.1007/s10732-013-9224-z". The code follows the pseudocode given in Page 805 in that paper.
 
 The code is written in Cython and Python 2.7. The module requires NetworkX 1.11.
 
@@ -15,7 +14,7 @@ Another version written in Python is available at https://github.com/yanggangthu
 # II) STRUCTURE OF MODULE
 Related functions are stored in FVS.py and FVS_localsearch_10_cython.pyx. 
 
-Core functions of finding a maximum sub topological ordering of a given graph (which is equivalent to identifying a minimum FVS) is written in FVS_localsearch_10_python.py.
+Core functions of finding a maximum sub topological ordering of a given graph (which is equivalent to identifying a minimum FVS) is written in FVS_localsearch_10_cython.pyx. This part is written in cython.
 
 FVS.py is a wrapper, that deals with graph input and identifies a near-minimum FVS by subtracting the nodes in the topological ordering from all the nodes.
 
